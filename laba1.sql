@@ -36,7 +36,7 @@ UPDATE gromov_students SET g_no = 'A-101';
 COMMIT;
 
 SELECT clock_timestamp(), * FROM groups;
-SELECT clock_timestamp(), * FROM gromov_students
+SELECT clock_timestamp(), * FROM gromov_students;
 
 CREATE TABLE course_chapters(c_no text REFERENCES gromov_courses(c_no),
 ch_no text, ch_title text, txt text, CONSTRAINT pkt_ch PRIMARY KEY(ch_no, c_no));
