@@ -132,7 +132,7 @@ $$;
 
 CALL Otobr_ob_SR_b_Gromov();
 
-SELECT * from vyv2;
+SELECT * from Vyv2;
 
 CREATE OR REPLACE FUNCTION F_sred_3_vel_Gromov
  (Value1 Int, Value2 Int, Value3 Int)
@@ -234,7 +234,7 @@ END;
 $$
 LANGUAGE 'plpgsql';
 
-CREATE TRIGGER Familia_del_trigger
+CREATE TRIGGER Gromov_del_trigger
   AFTER DELETE
   ON Obuchaushiesa
   EXECUTE PROCEDURE aft_delete_Gromov_fnc();
@@ -268,7 +268,7 @@ CREATE TABLE "Employee_Audit"
 "LastName" VARCHAR(50) NOT NULL,
 "FirstName" VARCHAR(50) NOT NULL,
 "UserName" VARCHAR(50) NOT NULL,
-"EmpAdditionTime" VARCHAR(50) NOT NULL);
+"EmpAdditionTime" VARCHAR(20) NOT NULL);
 
 CREATE OR REPLACE FUNCTION Gromov_insert_trigger_fnc()
   RETURNS trigger AS
@@ -291,3 +291,4 @@ INSERT INTO "Employee"
 VALUES(12,' Smith','Jeff','Editor',1,'1992-05-28 00:00:00','2022-01-15 00:00:00','Paseo de Gracia','Barcelona','Catalonia','Spain','128 665','+15 52-469-2573','+15 52-469-2573','mail@mail.com');
 
 SELECT * FROM "Employee_Audit";
+
